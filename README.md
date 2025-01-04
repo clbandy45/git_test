@@ -7,3 +7,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-02 TOP CSS exercise 01-css-methods done
 
 2025-01-03 TOP CSS exercise 02-class-id-selectors done
+
+2025-01-04 TOP CSS excersises 03-05 done
