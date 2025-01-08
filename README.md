@@ -13,3 +13,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-05 CSS videos watched
 
 2025-01-06 TOP The Cascade completed
+
+2025-01-07 Finished cascade. Started learning about the box. Watched a few videos.
