@@ -17,3 +17,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-07 Finished cascade. Started learning about the box. Watched a few videos.
 
 2025-01-08 learned a lot about THE BOX
+
+2025-01-09 finished intro to CSS block, started added CSS to my Odin-Recipes
