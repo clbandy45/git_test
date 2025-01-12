@@ -22,4 +22,4 @@ As I try to build the habit, I want to push something to GitHub each day or work
 
 2025-01-10 finished css styling on recipe website
 
-2025-01-12 omg flexboxes
+2025-01-11 omg flexboxes
