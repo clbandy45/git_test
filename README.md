@@ -1,4 +1,4 @@
-# git_test #mfer
+# git_test
 
 As I try to build the habit, I want to push something to GitHub each day or work on coding in some way. This is my log of doing so
 
