@@ -31,3 +31,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-14 TOP flexercises 04 and 05
 
 2025-01-15 TOP flexercise 06
+
+2025-01-16 TOP flexercise 07
