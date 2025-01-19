@@ -12,44 +12,123 @@ body {
 
 /* start of header */
     .header {
-        display: flex;
-        flex-direction: row;
         background-color: #1F2937;
-        color: white;
-        align-items: center;
+        color: #F9FAF8;
     }
 
-    .header .header-logo {
+    .header-width {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+
+    .header-logo {
         margin-right: auto;
-        font-size: 24px;
+        font-size: clamp(14px, 3vw,24px);
+        font-weight: 600;
     }
 
     .header-link-list {
         display: flex;
         flex-direction: row;
         margin-left: auto;
+        font-size: clamp(12px, 2.5vw, 18px);
+        color: #E5E7EB;
+        gap: 0.5em;
     }
 /* end of header */
 
 /* start of main-one */
-    .main-one {
-        display: flex;
-        flex-direction: row;
-        flex-basis: 50%;
+    .m1 {
         background-color: #1F2937;
         color: white;
     }
 
-    .main-one-title-side {
+    .m1-width {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+    .m1-title-side {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 50%;
+        gap: 0.25em;
     }
 
-    .main-one-image-side {
+    .m1-image-side {
         width: 50%;
     }
+
+    .m1-title {
+        font-size: clamp(18px, 4vw, 48px);
+        font-weight: 900;
+        color: #F9FAF8;
+    }
+
+    .m1-title-desc {
+        font-size: 18px;
+        color: #E5E7EB;
+    }
+    .m1-sign-up-button {
+        color: #F9FAF8;
+        background-color: #3882F6;
+        font-size: 16px;
+        font-weight: 600;
+    }
 /* end of main-one  */
+
+/* start of main-two */
+    .m2 {
+      
+    }
+
+    .m2-width {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    .m2-text {
+        font-size: 36px;
+        font-weight: 900;
+        color: #1F2937
+    }
+
+    .m2-boxes-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .m2-box-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .m2-box {
+        border: 2px solid #3882F6;
+        border-radius: 25px;
+        flex-basis: 150px;
+        /* figure out how to square these things */
+    }
+
+    .m2-box-subtext {
+        font-size: 18px;
+        color: gray;
+    }
+
+/* end of main-two */
 
 
