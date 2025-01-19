@@ -1,0 +1,18 @@
+/* main styling page */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-link-list {
+    display: flex;
+    flex-direction: row;
+}
+
+
