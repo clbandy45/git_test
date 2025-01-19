@@ -3,16 +3,53 @@
 body {
     display: flex;
     flex-direction: column;
+
+    /* from the google font page */
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-}
+/* start of header */
+    .header {
+        display: flex;
+        flex-direction: row;
+        background-color: #1F2937;
+        color: white;
+        align-items: center;
+    }
 
-.header-link-list {
-    display: flex;
-    flex-direction: row;
-}
+    .header .header-logo {
+        margin-right: auto;
+        font-size: 24px;
+    }
+
+    .header-link-list {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+    }
+/* end of header */
+
+/* start of main-one */
+    .main-one {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 50%;
+        background-color: #1F2937;
+        color: white;
+    }
+
+    .main-one-title-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    .main-one-image-side {
+        width: 50%;
+    }
+/* end of main-one  */
 
 
