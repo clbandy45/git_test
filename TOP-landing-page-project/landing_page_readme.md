@@ -1,0 +1,3 @@
+project goals
+
+see ./imgs
