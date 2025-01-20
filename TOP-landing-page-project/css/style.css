@@ -173,3 +173,25 @@ body {
     font-size: clamp(16px, 3vw, 22px);
     font-weight: 700;
 }
+
+/* end of main-three */
+
+/* start of main-four */
+
+.m4 {
+
+}
+.m4-width {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+
+.m4-text-side {
+    width: 50%;
+}
+
+.m4-button-side {
+    width: 50%;
+}
