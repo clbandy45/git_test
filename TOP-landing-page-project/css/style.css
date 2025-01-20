@@ -54,8 +54,8 @@ body {
         align-items: center;
         width: 80%;
         margin: auto;
-        margin-top: 2em;
-        margin-bottom: 1em;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
 
     .m1-title-side {
@@ -83,8 +83,10 @@ body {
     .m1-sign-up-button {
         color: #F9FAF8;
         background-color: #3882F6;
-        font-size: 16px;
+        font-size: clamp(12px, 2vw, 16px);
         font-weight: 600;
+        border-radius: 8px;
+        padding: 0.25em 1.2em 0.25em;
     }
 /* end of main-one  */
 
@@ -115,6 +117,8 @@ body {
         gap: 2em;
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 4em;
+        width: 80%
     }
 
     .m2-box-container {
@@ -138,4 +142,34 @@ body {
 
 /* end of main-two */
 
+/* start of main-three */
+.m3 {
+    background-color: #E5E7EB;
+}
 
+.m3-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.quote {
+    font-size: clamp(20px, 3vw, 28px);
+    font-style: italic;
+    color: #1F2937;
+    margin-top: 10%;
+    text-wrap: wrap;
+    width: 80%
+}
+
+.quote-credit {
+    margin-left: auto;
+    margin-right: 10%;
+    margin-top: 0.5em;
+    margin-bottom: 8%;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 700;
+}
