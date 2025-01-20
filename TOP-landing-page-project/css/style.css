@@ -71,13 +71,13 @@ body {
     }
 
     .m1-title {
-        font-size: clamp(18px, 4vw, 48px);
+        font-size: clamp(22px, 4vw, 54px);
         font-weight: 900;
         color: #F9FAF8;
     }
 
     .m1-title-desc {
-        font-size: 18px;
+        font-size: clamp(14px, 1.75vw, 22px);
         color: #E5E7EB;
     }
     .m1-sign-up-button {
@@ -104,29 +104,36 @@ body {
     .m2-text {
         font-size: 36px;
         font-weight: 900;
-        color: #1F2937
+        color: #1F2937;
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 
     .m2-boxes-container {
         display: flex;
         flex-direction: row;
+        gap: 2em;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .m2-box-container {
         display: flex;
         flex-direction: column;
+        flex-basis: 175px;
     }
 
     .m2-box {
-        border: 2px solid #3882F6;
+        border: 3px solid #3882F6;
         border-radius: 25px;
-        flex-basis: 150px;
-        /* figure out how to square these things */
+        flex-basis: 175px;
     }
 
     .m2-box-subtext {
-        font-size: 18px;
+        font-size: clamp(14px, 1.75vw, 18px);
         color: gray;
+        text-align: center;
+        text-wrap: wrap;
     }
 
 /* end of main-two */

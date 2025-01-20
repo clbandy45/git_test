@@ -10,3 +10,7 @@
 
     border: 1px solid black;    /* comment out when pushing to production, used just for styling site */
 }
+
+a {
+    color: inherit;
+}
