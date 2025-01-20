@@ -185,13 +185,12 @@ body {
     width: 80%;
     margin: auto;
     display: flex;
-}
-
-
-.m4-text-side {
-    width: 50%;
-}
-
-.m4-button-side {
-    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 5%;
+    background-color: #3882F6;
+    border-radius: 8px;
+    gap: 2em;
 }
