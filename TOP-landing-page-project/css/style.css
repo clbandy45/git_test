@@ -178,9 +178,6 @@ body {
 
 /* start of main-four */
 
-.m4 {
-
-}
 .m4-width {
     width: 80%;
     margin: auto;
@@ -189,8 +186,60 @@ body {
     align-items: center;
     margin-top: 10%;
     margin-bottom: 10%;
-    padding: 5%;
+    padding: 4% 10% 4%;
     background-color: #3882F6;
     border-radius: 8px;
     gap: 2em;
+    text-wrap: wrap;
 }
+
+
+.m4-text-side {
+    flex-basis: 70%;
+    color: #F9FAF8;
+}
+
+.m4-text-side-bold {
+    font-size: clamp(16px, 3vw,24px);
+    font-weight: 700;
+}
+
+.m4-text-side-desc {
+    font-size: clamp(14px, 2vw, 18px);
+    color: #E5E7EB;
+}
+
+.m4-button-container {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+.m4-button {
+    border: 2px solid #F9FAF8;
+    color: #F9FAF8;
+    border-radius: 5px;
+    padding: 0.25em 1.5em 0.25em;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+/* end of main-four */
+
+
+/* start of footer */
+.footer{
+    text-align: center;
+    text-wrap: wrap;
+    font-size: clamp(12px, 1.5vw,18px);
+    background-color: #1F2937;
+    color: #F9FAF8;
+    padding: 1.5em;
+}
+
+.copyright {
+    font-size: clamp(10px, 1.25vw,16px);
+}
+
+/* end of footer */
