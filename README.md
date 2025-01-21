@@ -39,3 +39,7 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-18 started TOP project
 
 2025-01-19 this project may take a few days...
+
+2025-01-20 work on project
+
+2025-01-21 finished project
