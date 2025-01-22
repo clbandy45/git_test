@@ -56,6 +56,7 @@ body {
         margin: auto;
         margin-top: 5%;
         margin-bottom: 5%;
+        gap: 0.5em;
     }
 
     .m1-title-side {
@@ -68,6 +69,11 @@ body {
 
     .m1-image-side {
         width: 50%;
+        background-color: gray;
+        align-self: center;
+        text-align: center;
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 
     .m1-title {
