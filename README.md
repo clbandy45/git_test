@@ -55,3 +55,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-26 rest day
 
 2025-01-27 didn't get much studying done today. busy day
+
+2025-01-28 got through some small stuff. hoping to have more time tomorrow!
