@@ -59,3 +59,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-01-28 got through some small stuff. hoping to have more time tomorrow!
 
 2025-01-29 functions and scope! 
+
+2025-01-30 studied!
