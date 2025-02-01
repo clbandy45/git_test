@@ -1,0 +1,52 @@
+/* this stylesheet is to be applied to the homepage only */
+
+.homepage-title {
+    padding: 0.5em;
+    text-align: center;
+    border: 5px solid black ;
+    margin: 10px auto 20px;
+    width: 300px;
+    background-color: rgb(69, 247, 176);
+}
+
+.homepage-description {
+    text-align: center;
+    margin: 10px;
+}
+
+.flex-container {
+    display: flex;
+    /* border: 2px solid black; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style-type: none;
+    border: 5px solid black;
+    display: flex;
+    width: 150px;
+    height: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ 
+li, a {
+    background-color: rgb(152, 217, 254);
+}
+
+a {
+    /* border: 2px solid black; */
+    text-align: center;
+}
+.closing-salute {
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Brush Script MT';
+    margin-top: 0.5em;
+}
+
+.recipe-two {
+    padding: 2px;
+}

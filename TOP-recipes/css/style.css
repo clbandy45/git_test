@@ -1,0 +1,84 @@
+/*this css sheet is to be applied to all pages*/
+/* opening reset open */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+/* opening reset close */
+
+* {
+    background-color: rgb(242, 230, 215);
+}
+
+.recipe-page-ingredients li {
+    display: list-item;
+    list-style: disc;
+    margin: 0.25em 0.5em 0.25em 3em;
+}
+
+.recipe-page-steps li {
+    display: list-item;
+    list-style: decimal;
+    margin: 0.25em 0.5em 0.25em 3em;
+}
+
+.button-return-home-top {
+    border: none;
+    padding: 0.5em;
+    margin: 0.5em 0.5em 0.5em auto;
+    display: block;
+    border: 2px solid black;
+}
+
+.button-return-home-top, a {
+    background-color: rgb(236, 236, 236);
+}
+
+.recipe-img {
+    margin: auto;
+    display: block;
+}
+.button-return-home-bottom {
+    border: none;
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 2px solid black;
+    display: block;
+    margin: 1em auto 1em;
+;}
+
+.button-return-home-bottom, a {
+    background-color: rgb(236, 236, 236);
+}
+
+h1 {
+    margin: 0.25em;
+    font-family: "Courier New";
+}
+
+.recipe-special-note {
+    margin: 0 1em 1em;
+}
+
+.h7 {
+    margin: 0.5em 1em 0.5em;
+}
+
+.recipe-signoff {
+    margin: 0.5em 1em 0.5em;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Brush Script MT';
+    margin-top: 0.5em;
+}
