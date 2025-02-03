@@ -7,3 +7,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-January only had one day where I didn't do something related to coding!
 
 2025-02-01 Merged odin recipe repo
+
+2025-02-02 problem solving reading/videos from TOP

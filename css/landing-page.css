@@ -1,0 +1,26 @@
+/* start css reset */
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* removes bullet points from lists */
+    text-decoration: none;    /* removes underlines from links */
+    box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
+    
+
+    border: 1px solid black;    
+    /* comment out when pushing to production, used just for styling site */
+}
+/* end css reset */
+
+* {
+    background-color: rgb(248, 248, 255);
+}
+
+#heading {
+    width: fit-content;
+    background: linear-gradient(to right, #4b6cb7, #061161);
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(2rem, calc(3vw + 1rem), 3rem);
+    font-weight: 700;
+}
