@@ -85,6 +85,7 @@ a {
     justify-content: center;
     background-color: #4b6cb7;
     border: 5px solid black;
+    padding: 0.5rem;
 }
 
 .cardlink{
@@ -95,6 +96,7 @@ a {
     align-content: center;
     position: relative;
     background-color: inherit;
+    border-radius: 5px;
 }
 
 .cardlink a {
@@ -113,4 +115,5 @@ a {
 .date {
     background-color: inherit;
     color: white;
+    border-radius: 5px;
 }
