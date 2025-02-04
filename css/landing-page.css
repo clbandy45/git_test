@@ -7,7 +7,7 @@
     box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
     
 
-    border: 1px solid black;    
+    border: 1px solid black;
     /* comment out when pushing to production, used just for styling site */
 }
 /* end css reset */
@@ -21,6 +21,46 @@
     background: linear-gradient(to right, #4b6cb7, #061161);
     background-clip: text;
     color: transparent;
-    font-size: clamp(2rem, calc(3vw + 1rem), 3rem);
+    font-size: clamp(2rem, calc(3vw + 1rem), 4rem);
     font-weight: 700;
+    margin: auto;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+p {
+    font-size: clamp(1rem, calc(2vw + 0.5rem), 1.5rem);
+    padding: 0 1rem 0;
+    margin-bottom: 1rem;
+}
+
+#foundations{
+    font-size: clamp(1.25rem, calc(2vw + 0.75rem), 1.75rem);
+    font-weight: 700;
+    background: linear-gradient(to right, #4b6cb7, #c00909);
+    background-clip: text;
+    color: transparent;
+    position: relative; /* for pseudoelement positioning */
+}
+
+#foundations::after {
+   content: '';
+   background: linear-gradient(to left, #4b6cb7, #c00909);
+   position: absolute;
+   height: 3px;
+   width: 100%;
+   bottom: 0;
+   left: 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    padding: min(5rem, 5%);
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
 }
