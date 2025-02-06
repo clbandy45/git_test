@@ -9,3 +9,9 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-01 Merged odin recipe repo
 
 2025-02-02 problem solving reading/videos from TOP
+
+2025-02-03 css
+
+2025-02-04 css/js
+
+2025-02-05 so much js
