@@ -15,3 +15,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-04 css/js
 
 2025-02-05 so much js
+
+2025-02-06 finished rock paper scissors project
