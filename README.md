@@ -19,3 +19,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-06 finished rock paper scissors project
 
 2025-02-07 how to write good comments
+
+2025-02-08 rest day and tomorrow arrays
