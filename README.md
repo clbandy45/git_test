@@ -23,3 +23,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-08 rest day and tomorrow arrays
 
 2025-02-09 arrays
+
+2025-02-10 arrays and loops and prep for JS exercises
