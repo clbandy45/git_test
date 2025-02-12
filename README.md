@@ -27,3 +27,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-10 arrays and loops and prep for JS exercises
 
 2025-02-11 more javascript problems
+
+2025-02-12 more js
