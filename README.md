@@ -31,3 +31,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-12 more js
 
 2025-02-13 finished js exercises 1-7
+
+2025-02-14 valentines day
