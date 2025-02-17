@@ -1,6 +1,5 @@
 //script for rock paper scissors
 
-console.log("Hello World!");
 let humanScore = 0;
 let computerScore = 0;
 let resultText = document.getElementById("throw-result");
@@ -13,7 +12,7 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = choice;
     computerChoice = getComputerChoice();
     result = winner(); 
-    resultText.textContent = `Human chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`;
+    resultText.textContent = `You chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`;
     hscore.textContent = humanScore;
     cscore.textContent = computerScore;
 
@@ -25,7 +24,7 @@ function playRound(humanChoice, computerChoice) {
             (humanChoice === "scissors" && computerChoice === "paper") ||
             (humanChoice === "paper" && computerChoice === "rock"))	{
             humanScore++;
-            return "Human wins!";
+            return "You win!";
         } else if ((computerChoice === "rock" && humanChoice === "scissors") ||
             (computerChoice === "scissors" && humanChoice === "paper") ||
             (computerChoice === "paper" && humanChoice === "rock"))	{ 
@@ -53,17 +52,15 @@ function getComputerChoice() {
     return computerChoice();
 }
 
-let gameResult = document.createElement("p");
-let resultDiv = document.getElementById("final-result");
-resultDiv.appendChild(gameResult);
+let gameResult = document.getElementById("final-result");
 
 function gameFinal() {
     if (humanScore == 3 && humanScore > computerScore) {
-        gameResult.textContent = `Human won ${humanScore} - ${computerScore}`;
+        gameResult.textContent = `You won ${humanScore} - ${computerScore}`;
         humanScore = 0;
         computerScore = 0;
     } else if (computerScore == 3 && humanScore < computerScore) {
-        gameResult.textContent = `Compuer won ${computerScore} - ${humanScore}`;
+        gameResult.textContent = `Computer won ${computerScore} - ${humanScore}`;
         humanScore = 0;
         computerScore = 0;
     } else {gameResult.textContent = "Keep playing! It's best 3 of 5"}
