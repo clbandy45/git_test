@@ -3,14 +3,19 @@
 console.log("Hello World!");
 let humanScore = 0;
 let computerScore = 0;
+let resultText = document.getElementById("throw-result");
+let hscore = document.getElementById("human-score");
+let cscore = document.getElementById("computer-score");
 	
 //play a round
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
+    humanChoice = choice;
     computerChoice = getComputerChoice();
     result = winner(); 
-    return console.log(`Human chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`);
+    resultText.textContent = `Human chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`;
+    hscore.textContent = humanScore;
+    cscore.textContent = computerScore;
 
     //function to determine who wins or if draw or catch a typo
     function winner() {
@@ -27,8 +32,8 @@ function playRound(humanChoice, computerChoice) {
             computerScore++;
             return "Computer wins!";
         } else { return "PLEASE CHOOSE A VALID HAND THROW" }
-        }
     }
+ }
 
 
 //computer choice
@@ -48,6 +53,23 @@ function getComputerChoice() {
     return computerChoice();
 }
 
+let gameResult = document.createElement("p");
+let resultDiv = document.getElementById("final-result");
+resultDiv.appendChild(gameResult);
+
+function gameFinal() {
+    if (humanScore == 3 && humanScore > computerScore) {
+        gameResult.textContent = `Human won ${humanScore} - ${computerScore}`;
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 3 && humanScore < computerScore) {
+        gameResult.textContent = `Compuer won ${computerScore} - ${humanScore}`;
+        humanScore = 0;
+        computerScore = 0;
+    } else {gameResult.textContent = "Keep playing! It's best 3 of 5"}
+}
+
+//human choice from button input
 let choice = '';
 
 let rock = document.getElementById('Rock');
@@ -55,16 +77,23 @@ let paper = document.getElementById('Paper');
 let scissors = document.getElementById('Scissors');
 
 rock.addEventListener("click", () => {
-    choice = 'Rock';
-    console.log(choice);
+    choice = 'rock';
+    playRound();
+    gameFinal();
 });
 
 paper.addEventListener("click", () => {
-    choice = 'Paper';
-    console.log(choice);
+    choice = 'paper';
+    playRound();
+    gameFinal();
 });
 
 scissors.addEventListener("click", () => {
-    choice = 'Scissors';
-    console.log(choice);
+    choice = 'scissors';
+    playRound();
+    gameFinal();
 });
+
+// GAME RESET //
+
+
