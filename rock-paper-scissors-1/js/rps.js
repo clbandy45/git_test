@@ -1,16 +1,20 @@
 //script for rock paper scissors
 
-console.log("Hello World!");
 let humanScore = 0;
 let computerScore = 0;
+let resultText = document.getElementById("throw-result");
+let hscore = document.getElementById("human-score");
+let cscore = document.getElementById("computer-score");
 	
 //play a round
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
+    humanChoice = choice;
     computerChoice = getComputerChoice();
     result = winner(); 
-    return console.log(`Human chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`);
+    resultText.textContent = `You chose ${humanChoice}. Computer chose ${computerChoice}. ${result}`;
+    hscore.textContent = humanScore;
+    cscore.textContent = computerScore;
 
     //function to determine who wins or if draw or catch a typo
     function winner() {
@@ -20,15 +24,15 @@ function playRound(humanChoice, computerChoice) {
             (humanChoice === "scissors" && computerChoice === "paper") ||
             (humanChoice === "paper" && computerChoice === "rock"))	{
             humanScore++;
-            return "Human wins!";
+            return "You win!";
         } else if ((computerChoice === "rock" && humanChoice === "scissors") ||
             (computerChoice === "scissors" && humanChoice === "paper") ||
             (computerChoice === "paper" && humanChoice === "rock"))	{ 
             computerScore++;
             return "Computer wins!";
         } else { return "PLEASE CHOOSE A VALID HAND THROW" }
-        }
     }
+ }
 
 
 //computer choice
@@ -48,46 +52,45 @@ function getComputerChoice() {
     return computerChoice();
 }
 
-//human choice
-//prompt human to enter
-//trim the user choice in case of a space after word
-//convert to lowercase
-//return the choice
-function getHumanChoice() {
-    let userChoice = prompt("Choose: rock, paper, or scissors");
-    let trimmed = userChoice.trim();
-    let humChoice = trimmed.toLowerCase();
-    return humChoice;
+let gameResult = document.getElementById("final-result");
+
+function gameFinal() {
+    if (humanScore == 3 && humanScore > computerScore) {
+        gameResult.textContent = `You won ${humanScore} - ${computerScore}`;
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 3 && humanScore < computerScore) {
+        gameResult.textContent = `Computer won ${computerScore} - ${humanScore}`;
+        humanScore = 0;
+        computerScore = 0;
+    } else {gameResult.textContent = "Keep playing! It's best 3 of 5"}
 }
 
-//game time
-function playGame() {
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
+//human choice from button input
+let choice = '';
 
-    if (humanScore > computerScore) {
-        console.log(`Human Wins ${humanScore}-${computerScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    } else if (humanScore < computerScore) {
-        console.log(`Computer Wins ${computerScore}-${humanScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    } else if (humanScore = computerScore) {
-        console.log(`The game was a tie! ${humanScore}-${computerScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    }
-    
-    console.log(`The score has been reset to ${humanScore} - ${computerScore}. Refresh the page to play again.`)
-}
+let rock = document.getElementById('Rock');
+let paper = document.getElementById('Paper');
+let scissors = document.getElementById('Scissors');
 
-playGame();
+rock.addEventListener("click", () => {
+    choice = 'rock';
+    playRound();
+    gameFinal();
+});
+
+paper.addEventListener("click", () => {
+    choice = 'paper';
+    playRound();
+    gameFinal();
+});
+
+scissors.addEventListener("click", () => {
+    choice = 'scissors';
+    playRound();
+    gameFinal();
+});
+
+// GAME RESET //
+
+

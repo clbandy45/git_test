@@ -1,0 +1,99 @@
+/* STYLE RESET */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* removes bullet points from lists */
+    text-decoration: none;    /* removes underlines from links */
+    box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
+    
+
+    /* border: 1px solid black;     */
+    /* comment out when pushing to production, used just for styling site */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 28px;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.button {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+
+.button:hover{
+    background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+
+.button:active{
+    position:relative;
+	top:1px;
+}
+
+#final-result, #throw-result{
+    margin-bottom: 1rem;
+}
+
+#final-result {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.score-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.score-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-container > p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.score-container > #human-score,
+.score-container > #computer-score {
+    font-size: 32px;
+}
+

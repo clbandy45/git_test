@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>use console</title>
+    <title>Rock | Paper | Scissors</title>
+    <link rel="stylesheet" href="./css/style-rps.css">
 </head>
 <body>
-<script src="./js/rps.js"></script>
+    <div class="container">
+        <p class="title">Lets play Rock, Paper, Scissors</p>
+        <p class="subtitle">Best of 3 of 5</p>
+        <div class="buttons">
+            <button class="button" id="Rock">Rock</button>
+            <button class="button" id="Paper">Paper</button>
+            <button class="button" id="Scissors">Scissors</button>
+        </div>
+        <p id="throw-result">Choose Rock, Paper, or Scissors to begin playing!</p>
+        <div id="final-result">Can you beat the computer?</div>
+        <div class="score-box">
+            <div class="score-container">
+                <p>Human Score</p>
+                <p id="human-score">0</p>
+            </div>
+            <div class="score-container">
+                <p>Computer Score</p>
+                <p id="computer-score">0</p>
+            </div>
+        </div>
 
-    
+    </div>
+
+
+    <script src="./js/rps.js"></script>  
 </body>
 </html>
