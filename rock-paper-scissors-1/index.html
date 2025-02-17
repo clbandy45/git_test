@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>use console</title>
+    <title>Rock | Paper | Scissors</title>
+    <link rel="stylesheet" href="./css/style-rps.css">
 </head>
 <body>
-<script src="./js/rps.js"></script>
+    <div class="container">
+        <p class="title">Title</p>
+        <div class="buttons">
+            <button class="button" id="Rock">Rock</button>
+            <button class="button" id="Paper">Paper</button>
+            <button class="button" id="Scissors">Scissors</button>
+        </div>
+        <p class="throw-result"></p>
+        <div class="score-container">
+            <p>Human Score</p>
+            <p class="human-score"></p>
+        </div>
+        <div class="score-container">
+            <p>Computer Score</p>
+            <p class="computer-score"></p>
+        </div>
 
-    
+    </div>
+
+
+    <script src="./js/rps.js"></script>  
 </body>
 </html>

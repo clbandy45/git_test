@@ -54,7 +54,7 @@ function getComputerChoice() {
 //convert to lowercase
 //return the choice
 function getHumanChoice() {
-    let userChoice = prompt("Choose: rock, paper, or scissors");
+    // let userChoice = prompt("Choose: rock, paper, or scissors");
     let trimmed = userChoice.trim();
     let humChoice = trimmed.toLowerCase();
     return humChoice;
