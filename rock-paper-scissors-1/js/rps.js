@@ -48,46 +48,23 @@ function getComputerChoice() {
     return computerChoice();
 }
 
-//human choice
-//prompt human to enter
-//trim the user choice in case of a space after word
-//convert to lowercase
-//return the choice
-function getHumanChoice() {
-    // let userChoice = prompt("Choose: rock, paper, or scissors");
-    let trimmed = userChoice.trim();
-    let humChoice = trimmed.toLowerCase();
-    return humChoice;
-}
+let choice = '';
 
-//game time
-function playGame() {
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
-    playRound();
-    console.log(`Human ${humanScore} - ${computerScore} Computer`);
+let rock = document.getElementById('Rock');
+let paper = document.getElementById('Paper');
+let scissors = document.getElementById('Scissors');
 
-    if (humanScore > computerScore) {
-        console.log(`Human Wins ${humanScore}-${computerScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    } else if (humanScore < computerScore) {
-        console.log(`Computer Wins ${computerScore}-${humanScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    } else if (humanScore = computerScore) {
-        console.log(`The game was a tie! ${humanScore}-${computerScore}`);
-        humanScore = 0;
-        computerScore = 0;
-    }
-    
-    console.log(`The score has been reset to ${humanScore} - ${computerScore}. Refresh the page to play again.`)
-}
+rock.addEventListener("click", () => {
+    choice = 'Rock';
+    console.log(choice);
+});
 
-playGame();
+paper.addEventListener("click", () => {
+    choice = 'Paper';
+    console.log(choice);
+});
+
+scissors.addEventListener("click", () => {
+    choice = 'Scissors';
+    console.log(choice);
+});
