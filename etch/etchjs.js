@@ -1,7 +1,7 @@
 //ETCH A SKETCH JAVASCRIPT CODE//
 
 
-let gridSize = 11; //grid size variable to be edited by user
+let gridSize = 16; //grid size variable to be edited by user
 let boxes = gridSize*gridSize; //square to create appropriate div count
 
 
@@ -20,12 +20,8 @@ function fillContainer() {
         divx.style.height = boxPx; 
         container.appendChild(divx);
     }
+    console.log(`${gridSize} x ${gridSize} grid created!`)
 }
 
 fillContainer();
 
-
-// window.addEventListener("resize", (e) => {
-//     console.log("window resized");
-//     fillContainer();
-// });

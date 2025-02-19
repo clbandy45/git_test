@@ -7,7 +7,7 @@
     box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
     
 
-    /* border: 0.5px solid black;     */
+    border: 0.5px solid black;    
     /* comment out when pushing to production, used just for styling site */
 }
 /* END STYLE RESET */
@@ -27,4 +27,8 @@
 
 .divx {
     aspect-ratio: 1;
+}
+
+.divx:hover {
+    background-color: teal;
 }
