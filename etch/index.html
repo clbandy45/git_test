@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="./etchcss.css">
 </head>
 <body>
-    <h1>Etch-a-Sketch(ish)</h1>
+    <h1><a href="../index.html">Etch-a-Sketch(ish)</a></h1>
+    <div class="description">
+        <p>Below is a grid of A x A boxes. The default is 32 x 32. You may change the size by altering the value of A, up to 100 x 100.</p>
+        <div class="buttons">
+            <span>A: <input type="number" id="input" min="2" max="100"/></span>
+            <button id="create">Create Grid</button>
+            <span id="creation-text"> </span>
+            <button id="clear">Clear Grid!</button>
+        </div>
+    </div>
+    <br>
     <div id="container"></div>
-
 
     <script src="./etchjs.js"></script>
 </body>

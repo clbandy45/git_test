@@ -7,10 +7,40 @@
     box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
     
 
-    border: 0.5px solid black;    
+    /* border: 0.5px solid black;     */
     /* comment out when pushing to production, used just for styling site */
 }
 /* END STYLE RESET */
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.description {
+    text-align: center;
+    justify-items: center;
+}
+
+.buttons {
+    display: flex;
+    width: 55vw;
+    margin-top: 0.5rem;
+}
+
+#clear {
+    margin-left: auto;
+}
+
+#create {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.clear {
+    margin-left: auto;
+}
 
 #container {
     width: 80vh;
@@ -23,12 +53,11 @@
     border: 2px solid black;
     align-items: center;
     justify-content: center;
+    background-color: lightgray;
+    overflow: hidden;
 }
 
 .divx {
     aspect-ratio: 1;
-}
-
-.divx:hover {
-    background-color: teal;
+    margin: 0px;
 }
