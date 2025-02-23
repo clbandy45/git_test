@@ -47,3 +47,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-21 learned about objects
 
 2025-02-22 rest day
+
+2025-02-23 some array practice
