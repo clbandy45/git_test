@@ -45,3 +45,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-18-20 etch a sketch project
 
 2025-02-21 learned about objects
+
+2025-02-22 rest day
