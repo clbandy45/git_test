@@ -105,7 +105,7 @@ const sumAll = function(x,y) {
 };
 //#endregion
 
-//TEMPERATUR COVNERSION F TO C AND C TO F//
+//TEMPERATURE COVNERSION F TO C AND C TO F//
 //#region
     const convertToCelsius = function(f) {
         const celsius = Math.round(((f-32)*(5/9))*10)/10;
@@ -118,3 +118,16 @@ const sumAll = function(x,y) {
     };
 //#endregion
 
+//ARRANGE AN ARRAY IN ASCENDING OR DESCENDING ORDER//
+//#region
+    //set to descending currently
+    //let arr = [5, 2, 1, -10, 8];
+    // onsole.log(arr);
+    function compareNumeric(a, b) {
+        if (a > b) return -1;
+        if (a == b) return 0;
+        if (a < b) return 1;
+        }
+    arr.sort(compareNumeric);
+    //console.log(arr);
+//#endregion
