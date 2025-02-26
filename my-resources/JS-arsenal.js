@@ -120,7 +120,7 @@ const sumAll = function(x,y) {
 
 //ARRANGE AN ARRAY IN ASCENDING OR DESCENDING ORDER//
 //#region
-    //set to descending currently
+    //set to descending currently 
     //let arr = [5, 2, 1, -10, 8];
     // onsole.log(arr);
     function compareNumeric(a, b) {
@@ -130,4 +130,49 @@ const sumAll = function(x,y) {
         }
     arr.sort(compareNumeric);
     //console.log(arr);
+//#endregion
+
+//BASIC CALCULATOR FUNCTIONS//
+//#region 
+    const add = function(a,b) {
+        return a + b;
+    };
+  
+    const subtract = function(a,b) {
+        return a - b;
+    };
+  
+    const sum = function(arr) {
+        let totalSum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0); 
+        return totalSum;
+    };
+  
+    const multiply = function(arr) {
+        let totalMultiply = arr.reduce((accumulator, currentValue) => accumulator * currentValue, 1); 
+        return totalMultiply;
+    };
+  
+    const power = function(a,b) {
+        return a ** b;
+    };
+  
+    const factorial = function(a) {
+        if (a == 0) {
+            return 1;
+        } else {
+            return a * factorial(a-1);
+        }
+    };
+//#endregion
+
+//CHECK IF PALINDROMES//
+//#region
+//works on sentences, words, with or without punctuation, and with or without numbers
+    const palindromes = function (palindrome) {
+        const alphaNumerical = 'abcdefghijklmnopqrstuvwxyz0123456789'; //for filter
+        const cleaned = palindrome.toLowerCase().split('').filter(char => alphaNumerical.includes(char)).join('');
+        const reversed = cleaned.split('').reverse().join('');
+
+        return cleaned === reversed;
+    };
 //#endregion
