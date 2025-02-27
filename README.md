@@ -49,3 +49,7 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-02-22 rest day
 
 2025-02-23 some array practice
+
+2025-02-24,25 some exercises and reading.
+
+2025-02-26 I need work on array functions
