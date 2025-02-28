@@ -33,7 +33,10 @@ const factorial = function(a) {
 let valueOne = 0;
 let valueTwo = 0;
 let operand;
+let operateFunction = 0;
 
+
+//OPERATION FUNCTION TO CALL BASIC FUNCTIONS BASED ON OPERAND
 const operate = function(valueOne, valueTwo, operand) {
     if (operand === '+') {
         return add(valueOne,valueTwo);
@@ -48,11 +51,46 @@ const operate = function(valueOne, valueTwo, operand) {
     }  
 }
 
-console.log(operate(5,5,'+') + ' = 5 + 5');
-console.log(operate(5,5,'-') + ' = 5 - 5');
-console.log(operate(5,5,'*') + ' = 5 * 5');
-console.log(operate(5,5,'/') + ' = 5 / 5');
-console.log(operate(5,5,'^') + ' = 5^5');
+//constants for all the click functions
+const numerals = document.querySelectorAll(".numeral");
+const screen = document.getElementById("display-output");
+const clear = document.getElementById("clear");
+const decimal = document.getElementById("decimal");
+const oper = document.querySelectorAll(".operand");
+const equals = document.getElementById("equals");
 
+//click functions
+numerals.forEach(element => {
+    element.addEventListener("click", () => {
+        screen.textContent += element.textContent;
+        if (screen.textContent.includes(".")){
+            decimal.disabled = true;
+        } else {
+            decimal.disabled = false;
+        }
+    });
+});
 
+clear.addEventListener("click",() => {
+    screen.textContent = '';
+    decimal.disabled = false;
+});
+
+oper.forEach(element => {
+    element.addEventListener("click", () => {
+        valueOne = screen.textContent;
+        console.log(valueOne);
+        operand = "'" + element.textContent + "'";
+        console.log(operand);
+        screen.textContent = '';
+    })
+})
+
+equals.addEventListener("click", () => {
+    valueTwo = screen.textContent;
+    console.log(valueTwo);
+    operateFunction = operate(valueOne, valueTwo, operand);
+    console.log(operate());
+    console.log(operateFunction);
+})
     
