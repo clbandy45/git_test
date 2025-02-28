@@ -48,10 +48,10 @@ const operate = function(valueOne, valueTwo, operand) {
     }  
 }
 
-console.log(operate(5,5,'+') + ' = 5+5');
-console.log(operate(5,5,'-') + ' = 5-5');
-console.log(operate(5,5,'*') + ' = 5*5');
-console.log(operate(5,5,'/') + ' = 5/5');
+console.log(operate(5,5,'+') + ' = 5 + 5');
+console.log(operate(5,5,'-') + ' = 5 - 5');
+console.log(operate(5,5,'*') + ' = 5 * 5');
+console.log(operate(5,5,'/') + ' = 5 / 5');
 console.log(operate(5,5,'^') + ' = 5^5');
 
 
