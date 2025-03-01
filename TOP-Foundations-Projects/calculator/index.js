@@ -32,7 +32,7 @@ const factorial = function(a) {
 //CONSTANTS FOR BASIC OPERATIONS
 let valueOne = 0;
 let valueTwo = 0;
-let operand;
+let operand = '';
 let operateFunction = 0;
 
 
@@ -55,9 +55,12 @@ const operate = function(valueOne, valueTwo, operand) {
 const numerals = document.querySelectorAll(".numeral");
 const screen = document.getElementById("display-output");
 const clear = document.getElementById("clear");
+const clearAll = document.getElementById("clear-all");
 const decimal = document.getElementById("decimal");
 const oper = document.querySelectorAll(".operand");
 const equals = document.getElementById("equals");
+const heldDisplay = document.getElementById("held-value");
+const heldOperand = document.getElementById("held-operand");
 
 //click functions
 numerals.forEach(element => {
@@ -78,19 +81,30 @@ clear.addEventListener("click",() => {
 
 oper.forEach(element => {
     element.addEventListener("click", () => {
-        valueOne = screen.textContent;
-        console.log(valueOne);
-        operand = "'" + element.textContent + "'";
-        console.log(operand);
+        valueOne = Number(screen.textContent);
+        operand = element.textContent;
         screen.textContent = '';
+        heldDisplay.textContent = valueOne;
+        heldOperand.textContent = operand;
     })
 })
 
 equals.addEventListener("click", () => {
-    valueTwo = screen.textContent;
-    console.log(valueTwo);
-    operateFunction = operate(valueOne, valueTwo, operand);
-    console.log(operate());
-    console.log(operateFunction);
+    valueTwo = Number(screen.textContent);
+    operateFunction = operate(valueOne,valueTwo, operand);
+    screen.textContent = operateFunction;
+    valueOne = valueTwo;
+    operand = '';
+    heldDisplay.textContent = valueOne;
+    heldOperand.textContent = operand;
 })
     
+clearAll.addEventListener("click",() => {
+    screen.textContent = '';
+    valueOne = 0;
+    valueTwo = 0;
+    operand = ' ';
+    heldDisplay.textContent = valueOne;
+    heldOperand.textContent = operand;
+});
+
