@@ -14,6 +14,9 @@ const multiply = function(a,b) {
 }
 
 const divide = function(a,b) {
+    if (b == 0) {
+        return "err";
+    }
     return a / b;
 }
 
@@ -65,6 +68,9 @@ const heldOperand = document.getElementById("held-operand");
 //click functions
 numerals.forEach(element => {
     element.addEventListener("click", () => {
+        if (isNaN(screen.textContent)) {
+            screen.textContent = '';
+        }
         screen.textContent += element.textContent;
         if (screen.textContent.includes(".")){
             decimal.disabled = true;
@@ -81,6 +87,9 @@ clear.addEventListener("click",() => {
 
 oper.forEach(element => {
     element.addEventListener("click", () => {
+        if (isNaN(screen.textContent)) {
+            screen.textContent = '';
+        }
         valueOne = Number(screen.textContent);
         operand = element.textContent;
         screen.textContent = '';

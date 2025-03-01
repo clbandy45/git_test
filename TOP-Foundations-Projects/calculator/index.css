@@ -21,3 +21,21 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 36px;
 }
+
+.container {
+    width: 70vw;
+    margin: auto;
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.mini-description, .mini-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 15vw;
+}
+
