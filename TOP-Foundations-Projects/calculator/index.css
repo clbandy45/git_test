@@ -13,29 +13,75 @@
 /* end css reset */
 
 button {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 #display-output  {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 36px;
+    font-size: 38px;
+    min-height: 50px;
 }
 
 .container {
-    width: 70vw;
+    width: 35vw;
     margin: auto;
+    margin-top: 25px;
 }
 
-.display-container {
+.buttons-container {
     display: flex;
-    flex-direction: column;
-    align-items: end;
 }
-.mini-description, .mini-display {
+
+.display-container,
+.clear-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 15vw;
+    justify-content: end;
+    padding: 5px;
 }
 
+.filler {
+    width: 55%;
+}
+.clear-container {
+    padding-right: 5%;
+    padding-left: 5%;
+    justify-content: space-around;
+    width: 45%;
+}
+
+#display-output {
+    background-color: lightgray;
+    min-width: 80%;
+    text-align: end;
+}
+
+.bottom-container {
+    display: flex;
+}
+
+.numerals-container,
+.operand-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.numerals-container {
+    width: 55%;
+    padding: 3%;
+}
+
+.operand-container {
+    width: 45%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#equals {
+    width: 158px;
+}

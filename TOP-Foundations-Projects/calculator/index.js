@@ -62,8 +62,8 @@ const clearAll = document.getElementById("clear-all");
 const decimal = document.getElementById("decimal");
 const oper = document.querySelectorAll(".operand");
 const equals = document.getElementById("equals");
-const heldDisplay = document.getElementById("held-value");
-const heldOperand = document.getElementById("held-operand");
+
+
 
 //click functions
 numerals.forEach(element => {
@@ -72,6 +72,7 @@ numerals.forEach(element => {
             screen.textContent = '';
         }
         screen.textContent += element.textContent;
+        // history.textContent += element.textContent;
         if (screen.textContent.includes(".")){
             decimal.disabled = true;
         } else {
@@ -99,6 +100,9 @@ oper.forEach(element => {
 })
 
 equals.addEventListener("click", () => {
+    if (isNaN(screen.textContent)) {
+        screen.textContent = '';
+    }
     valueTwo = Number(screen.textContent);
     operateFunction = operate(valueOne,valueTwo, operand);
     screen.textContent = operateFunction;
@@ -112,8 +116,8 @@ clearAll.addEventListener("click",() => {
     screen.textContent = '';
     valueOne = 0;
     valueTwo = 0;
-    operand = ' ';
-    heldDisplay.textContent = valueOne;
+    operand = '';
+    heldDisplay.textContent = '';
     heldOperand.textContent = operand;
 });
 
