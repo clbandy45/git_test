@@ -7,7 +7,7 @@
     box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
     
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* comment out when pushing to production, used just for styling site */
 }
 /* end css reset */
@@ -15,6 +15,8 @@
 button {
     width: 70px;
     height: 70px;
+    background-color: lightgray;
+    border: 2px solid black;
 }
 
 #display-output  {
@@ -24,9 +26,10 @@ button {
 }
 
 .container {
-    width: 35vw;
+    width: 475px;
     margin: auto;
     margin-top: 25px;
+    border: 2px solid black;
 }
 
 .buttons-container {
@@ -41,6 +44,7 @@ button {
     padding: 5px;
 }
 
+
 .filler {
     width: 55%;
 }
@@ -53,8 +57,9 @@ button {
 
 #display-output {
     background-color: lightgray;
-    min-width: 80%;
+    min-width: 90%;
     text-align: end;
+    border: 2px solid black;
 }
 
 .bottom-container {
@@ -85,3 +90,4 @@ button {
 #equals {
     width: 158px;
 }
+
