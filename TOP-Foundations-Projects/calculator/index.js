@@ -164,7 +164,9 @@
             screen.textContent = ''; 
         }
 
-        if (lastclicked='equals') {
+        //what to run if the last button pressed was equals, sets screen to valueOne, keeps operand, keeps valueTwo        
+        if (lastclicked == 'equals') {
+            valueOne = Number(screen.textContent);
             operateFunction = operate(valueOne,valueTwo, operand);
             //if there is a decimal at all, it rounds to 5 places else it displays the whole number
             let decimals = operateFunction.toFixed(5);
@@ -177,7 +179,6 @@
                 screen.textContent = operateFunction;
             }
         } else {
-
             //assign the screen to value two and evaluate the function
             valueTwo = Number(screen.textContent);
             operateFunction = operate(valueOne,valueTwo, operand);
@@ -200,7 +201,6 @@
             //update last clicked
         }
         lastclicked = 'equals';
-
     });
 
     //styling for mouse up and down
@@ -212,35 +212,42 @@
     });
 //
 
-//clear display and values
-clearAll.addEventListener("click",() => {
-    screen.textContent = '';
-    valueOne = 0;
-    valueTwo = 0;
-    operand = '';
-});
-clearAll.addEventListener("mousedown", () => {
-    clearAll.style.backgroundColor = 'lightgreen';
-});    
-clearAll.addEventListener("mouseup", () => {
-    clearAll.style.backgroundColor = 'lightgray';
-});
+//CLEAR ALL WITH CE, ESSENTIALLY SETS PAGES TO AS IF IT WAS REFRESHED//
+    clearAll.addEventListener("click",() => {
+        screen.textContent = '';
+        valueOne = 0;
+        valueTwo = 0;
+        operand = '';
+        lastclicked = null;
+    });
+    clearAll.addEventListener("mousedown", () => {
+        clearAll.style.backgroundColor = 'lightgreen';
+    });    
+    clearAll.addEventListener("mouseup", () => {
+        clearAll.style.backgroundColor = 'lightgray';
+    });
+//
 
+//BACKSPACE ONE CHARACTER//
+    backspace.addEventListener("click", () => {
+        screen.textContent = screen.textContent.slice(0,-1);
+    });
+    backspace.addEventListener("mousedown", () => {
+        backspace.style.backgroundColor = 'lightgreen';
+    });    
+    backspace.addEventListener("mouseup", () => {
+        backspace.style.backgroundColor = 'lightgray';
+    });
+//
 
-//backspace display
-backspace.addEventListener("click", () => {
-    screen.textContent = screen.textContent.slice(0,-1);
-});
-backspace.addEventListener("mousedown", () => {
-    backspace.style.backgroundColor = 'lightgreen';
-});    
-backspace.addEventListener("mouseup", () => {
-    backspace.style.backgroundColor = 'lightgray';
-});
-
-
-//testing
+//listen to every click to enable-disable the equals button to avoid errors from smacking it
 document.addEventListener("click", () => {
-    console.log(lastclicked);
-    console.log(valueOne + ' ' + operand + ' ' + valueTwo);
+    if (lastclicked === null) {
+        equals.disabled = true;
+    } else {
+        equals.disabled = false;
+    }
 })
+
+//start the equals button off disable so it can't just be smacked
+equals.disabled = true;
