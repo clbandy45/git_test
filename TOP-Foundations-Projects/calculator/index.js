@@ -67,6 +67,23 @@
     const equals = document.getElementById("equals");
     const backspace = document.getElementById("backspace");
     let lastclicked = null;
+
+    const numOne = document.getElementById("one");
+    const numTwo = document.getElementById("two");
+    const numThree = document.getElementById("three");
+    const numFour = document.getElementById("four");
+    const numFive = document.getElementById("five");
+    const numSix = document.getElementById("six");
+    const numSeven = document.getElementById("seven");
+    const numEight = document.getElementById("eight");
+    const numNine = document.getElementById("nine");
+    const numZero = document.getElementById("zero");
+
+    const btnPlus = document.getElementById("plus");
+    const btnMinus = document.getElementById("minus");
+    const btnMultiply = document.getElementById("multiply");
+    const btnDivide = document.getElementById("divide");
+    const btnPower = document.getElementById("power");
 //
 
 //WHEN A NUMBER IS CLICKED//
@@ -199,8 +216,8 @@
                 }
             }
             //update last clicked
+            lastclicked = 'equals';
         }
-        lastclicked = 'equals';
     });
 
     //styling for mouse up and down
@@ -251,3 +268,85 @@ document.addEventListener("click", () => {
 
 //start the equals button off disable so it can't just be smacked
 equals.disabled = true;
+
+document.addEventListener("keyup", (key) => {
+    console.log(key.key);
+    if (key.key === '=') {
+        equals.click();
+    }
+    if (key.key === 'Enter') {
+        equals.click();
+    }
+
+    if (key.key === '1') {
+        numOne.click();
+    }
+
+    if (key.key === '2') {
+        numTwo.click();
+    }
+
+    if (key.key === '3') {
+        numThree.click();
+    }
+
+    if (key.key === '4') {
+        numFour.click();
+    }
+
+    if (key.key === '5') {
+        numFive.click();
+    }
+
+    if (key.key === '6') {
+        numSix.click();
+    }
+
+    if (key.key === '7') {
+        numSeven.click();
+    }
+
+    if (key.key === '8') {
+        numEight.click();
+    }
+
+    if (key.key === '9') {
+        numNine.click();
+    }
+
+    if (key.key === '0') {
+        numZero.click();
+    }
+
+    if (key.key === '.') {
+        decimal.click();
+    }
+
+    if (key.key === 'Escape') {
+        clear.click();
+    }
+
+    if (key.key === '+') {
+        btnPlus.click();
+    }
+
+    if (key.key === '-') {
+        btnMinus.click();
+    }
+
+    if (key.key === '*') {
+        btnMultiply.click();
+    }
+
+    if (key.key === '/') {
+        btnDivide.click();
+    }
+
+    if (key.key === '^') {
+        btnPower.click();
+    }
+
+    if (key.key === 'Backspace') {
+        backspace.click();
+    }
+});
