@@ -270,7 +270,6 @@ document.addEventListener("click", () => {
 equals.disabled = true;
 
 document.addEventListener("keyup", (key) => {
-    console.log(key.key);
     if (key.key === '=') {
         equals.click();
     }
