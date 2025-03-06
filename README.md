@@ -13,3 +13,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-03-04 started javascript path on TOP
 
 2025-03-05 html tables
+
+2025-03-06 emmet, html tables
