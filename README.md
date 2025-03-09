@@ -17,3 +17,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-03-06 emmet, html tables
 
 2025-03-07 defaults and css units
+
+2025-03-08 rest day
