@@ -27,3 +27,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-03-11 so much css
 
 2025-03-11 css has so many components. very nice. the best
+
+2025-03-12 css variables are v nice
