@@ -1,0 +1,13 @@
+/* STYLE RESET */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* removes bullet points from lists */
+    text-decoration: none;    /* removes underlines from links */
+    box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
+    
+
+    /* border: 0.5px solid black;     */
+    /* comment out when pushing to production, used just for styling site */
+}
+/* END STYLE RESET */
