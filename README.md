@@ -43,3 +43,5 @@ As I try to build the habit, I want to push something to GitHub each day or work
 2025-03-19 repo cleanup and start of signup project
 
 2025-03-20 did some work on the form on codepen at work but lost my progress when browser crashed
+
+2025-03-21 not much!
