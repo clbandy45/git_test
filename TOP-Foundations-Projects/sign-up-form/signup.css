@@ -19,13 +19,8 @@
     height: 100vh;
     max-height: 700px;
 }
-/**/
 
 /* INNER CONTAINERS SETUP */
-.inner-container {
-
-}
-
 .left-container {
     width: 40%;
     background-image: url(./sign-up-form-resources/halie-west-25xggax4bSA-unsplash.jpg);
@@ -35,7 +30,24 @@
 .right-container {
     width: 60%;
 }
-/**/
+
+/* LEFT CONTAINER*/
+#odin-face {
+  height: 20vh;
+}
+
+#odin-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0, 0, 50%); /*figure out*/
+}
+
+#odin-text > span {
+  font-size: 6rem;
+  color: white;
+}
+
 
 /* REGIONAL SETTINGS FOR RIGHT SIDE CONTAINER */
 .description-container,
@@ -46,8 +58,6 @@
 .form-container {
   height: 32%;
 }
-/**/
-
 
 /* FORM CONTAINER */
 .form-container {
@@ -69,4 +79,3 @@ input {
   width: 100%;
   border: solid 1px gray;
 }
-/**/
