@@ -40,7 +40,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(0, 0, 0, 50%); /*figure out*/
+  background-color: hsla(0, 50%, 0%, 45%);
+  margin-top: 25%;
 }
 
 #odin-text > span {
@@ -51,19 +52,27 @@
 
 /* REGIONAL SETTINGS FOR RIGHT SIDE CONTAINER */
 .description-container,
-.account-container {
+.btn-container {
   height: 34%;
+  padding-left: 5%;
 }
 
 .form-container {
   height: 32%;
+  padding-left: 5%;
+  width: 70%;
 }
 
+/* DESCRIPTION CONTAINER */
+.description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+}
+
+
 /* FORM CONTAINER */
-.form-container {
-    width: 70%;
-  }
-  
 .big-block {
   display: flex;
 }
@@ -77,5 +86,16 @@ input {
   border-radius: 5px;
   height: 2rem;
   width: 100%;
-  border: solid 1px gray;
+  border: solid 2px #E5E7EB;
+}
+
+input:focus {
+  outline: none;
+  border: solid 2px lightskyblue;
+  box-shadow: 3px 3px 5px gray;
+}
+
+/* Button Container*/
+#btn {
+  background-color: #596D48;
 }
