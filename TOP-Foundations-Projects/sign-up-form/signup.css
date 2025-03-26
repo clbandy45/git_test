@@ -18,6 +18,7 @@
     display: flex;
     height: 100vh;
     max-height: 700px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* INNER CONTAINERS SETUP */
@@ -33,7 +34,7 @@
 
 /* LEFT CONTAINER*/
 #odin-face {
-  height: 20vh;
+  height: 140px;
 }
 
 #odin-text {
@@ -49,32 +50,32 @@
   color: white;
 }
 
-
-/* REGIONAL SETTINGS FOR RIGHT SIDE CONTAINER */
-.description-container,
-.btn-container {
-  height: 34%;
-  padding-left: 5%;
-}
-
-.form-container {
-  height: 32%;
-  padding-left: 5%;
-  width: 70%;
-}
-
 /* DESCRIPTION CONTAINER */
 .description-container {
+  height: 34%;
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 5%;
+  background-color: #f2f2f2;
 }
 
+.description-container > p,
+.form-container > .description {
+  font-size: 1.5rem;
+}
 
 /* FORM CONTAINER */
+.form-container{
+  height: 36%;
+  padding: 0.5rem 5% 0.5rem 5%;
+}
+
 .big-block {
   display: flex;
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -87,6 +88,7 @@ input {
   height: 2rem;
   width: 100%;
   border: solid 2px #E5E7EB;
+  margin-top: 0.25rem;
 }
 
 input:focus {
@@ -95,7 +97,36 @@ input:focus {
   box-shadow: 3px 3px 5px gray;
 }
 
+label {
+  font-weight: 600;
+}
+
 /* Button Container*/
+.btn-container {
+  height: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #f2f2f2;
+}
 #btn {
   background-color: #596D48;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.btn-container > p{
+  margin-top: 0.5rem;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
 }
