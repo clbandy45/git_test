@@ -7,7 +7,7 @@
     box-sizing: border-box; /* accounts for border and padding in sizing when designate height/width */
     
 
-    border: 0.5px solid black;    
+    /* border: 0.5px solid black;     */
     /* comment out when pushing to production, used just for styling site */
 }
 /* END STYLE RESET */
@@ -87,13 +87,13 @@ input {
   border-radius: 5px;
   height: 2rem;
   width: 100%;
-  border: solid 2px #E5E7EB;
+  border: 2px solid #E5E7EB;
   margin-top: 0.25rem;
 }
 
 input:focus {
   outline: none;
-  border: solid 2px lightskyblue;
+  border: 2px solid lightskyblue;
   box-shadow: 3px 3px 5px gray;
 }
 
@@ -108,6 +108,7 @@ label {
   padding-right: 5%;
   background-color: #f2f2f2;
 }
+
 #btn {
   background-color: #596D48;
   padding: 0.5rem 2rem 0.5rem 2rem;
@@ -119,14 +120,19 @@ label {
   box-shadow: 2px 2px 5px gray;
 }
 
-.btn-container > p{
+.btn-container > p {
   margin-top: 0.5rem;
 }
 
 input:invalid {
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 input:valid {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+}
+
+#log-in {
+  font-weight: 700;
+  color: #596D48;
 }
