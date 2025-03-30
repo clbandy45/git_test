@@ -124,12 +124,12 @@ label {
   margin-top: 0.5rem;
 }
 
-input:invalid {
-  /* border: 2px solid red; */
+input:not(:placeholder-shown):user-invalid {
+  border: 2px solid red;
 }
 
-input:valid {
-  /* border: 2px solid green; */
+input:not(:placeholder-shown):user-valid {
+  border: 2px solid green;
 }
 
 #log-in {
