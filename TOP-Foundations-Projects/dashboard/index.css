@@ -22,6 +22,7 @@
   --alert: 2px solid pink;
 }
 /**/
+
 .grid-container {
   display: grid;
   grid-template-columns: minmax(191px, 1fr) 5fr;
@@ -45,11 +46,13 @@
   height: auto;
 }
 
-.nav-child-content {
+.nav-child-content,
+.nav-child-content > a {
   align-content: center;
   width: 60%;
   font-weight: 700;
   height: 2rem;
+  color: white;
 }
 
 .icon-container {
