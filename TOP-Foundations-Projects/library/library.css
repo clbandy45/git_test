@@ -1,0 +1,38 @@
+#cards-container {
+  width: 100%;
+  display: flex;
+  border: 2px solid limegreen;
+}
+
+.body {
+  display: flex;
+}
+
+.book-card {
+  border: 2px solid black;
+  width: 18%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.form-div {
+  margin-left: 1rem;
+}
+
+fieldset {
+  display: flex;
+}
+
+input {
+  padding-left: 0.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h3 {
+    height: 2rem;
+}

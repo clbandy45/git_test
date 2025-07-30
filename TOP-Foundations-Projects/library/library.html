@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myLibrary</title>
+    <link href="./library.css" rel="stylesheet">
+</head>
+<body>
+    <h1><a href="../../index.html">My Library</a></h1>
+<form class="form" name="book-form">
+  <fieldset>
+    <legend>Add a Book!</legend>
+    <div class="form-div">
+      <label for="ftitle">Title</label>
+      <input type="text" id="ftitle" name="ftitle" placeholder="The Hobbit">
+    </div>
+    <div class="form-div">
+      <label for="fauthor">Author</label>
+      <input type="text" id="fauthor" name="fauthor" placeholder="JRR Tolkien">
+    </div>
+    <div class="form-div">
+      <label for="fpages">Pages</label>
+      <input type="text" id="fpages" name="fpages" placeholder="297">
+    </div>
+    <div class="form-div">
+      <label for="fstatus">Read Status</label>
+      <select name="fstatus" id="fstatus">
+        <option value="Not Read">Not Read</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Read">Read</option>
+      </select>
+    </div>
+    <div class="form-div">
+      <button type="button" id="submit-button">Submit</button>
+    </div>
+  </fieldset>
+</form>
+<div>
+  <ul id="error-box"></ul>
+</div>
+<div class="body">
+  <div id="cards-container"></div>
+</div>
+
+<script src="./library.js"></script>
+</body>
+</html>
