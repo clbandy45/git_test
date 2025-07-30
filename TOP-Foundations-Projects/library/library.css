@@ -1,7 +1,9 @@
 #cards-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   border: 2px solid limegreen;
+  
 }
 
 .body {
@@ -10,10 +12,11 @@
 
 .book-card {
   border: 2px solid black;
-  width: 18%;
+  width: 16rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-bottom: 0.25rem;
+  margin: 1px;
 }
 
 .form-div {
