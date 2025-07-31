@@ -170,7 +170,7 @@ submitButton.addEventListener("click", () => {
     getTitle.value = "";
     getAuthor.value = "";
     getPages.value = "";
-    getStatus.value = "";
+    getStatus.value = "Not Read";
     addCards();
   }
 });
