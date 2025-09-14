@@ -1,0 +1,117 @@
+.body {
+  display: flex;
+  justify-content: center;
+
+}
+
+#player1box,
+#player2box,
+#board {
+  border: 2px solid green;
+  width: 300px;
+  aspect-ratio: 1/1;
+  margin: 1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#board {
+  justify-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+.game-square {
+  width: calc(97% / 3);
+  height: calc(97% / 3);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+#square-0,
+#square-3,
+#square-6 {
+  border-right: 3px solid black;
+}
+
+#square-1,
+#square-4,
+#square-7 {
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#square-2,
+#square-5,
+#square-8 {
+  border-left: 3px solid black;
+}
+
+#square-0,
+#square-1,
+#square-2,
+#square-3,
+#square-4,
+#square-5 {
+  border-bottom: 3px solid black;
+}
+
+#square-3,
+#square-4,
+#square-5,
+#square-6,
+#square-7,
+#square-8 {
+  border-top: 3px solid black;
+}
+
+#results {
+  border: 2px solid black;
+  width: calc(45% + 4rem);
+  height: 4rem;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result-box {
+  width: 100%;
+  height: 3rem;
+  align-content: center;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+#play-again {
+  width: 6rem;
+}
+
+#player1box,
+#player2box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.player-score {
+  font-size: 2rem;
+}
+
+.player-marker {
+  font-size: 3rem;
+}
+
+.player-turn {
+  font-size: 1.25rem;
+}
