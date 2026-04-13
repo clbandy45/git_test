@@ -82,23 +82,31 @@
         <ul id="error-box"></ul>
     </div>
     <div class="body">
-    <div id="cards-container"></div>
+    <div id="cards-container">
+        <div class="book-card example-remove example" style="display: show">
+            <h3 class="example example-remove" style="display: show">Add a book!</h3>
+            <p class="example example-remove" style="display: show">Author</p>
+            <p class="example example-remove" style="display: show">Pages</p>
+            <p class="example example-remove" style="display: show">Read Status</p>
+            <button class="example example-remove status-btn" style="display: show">Change Status</button>
+            <button class="example example-remove remove-btn" style="display: show">Remove</button>
+        </div>
+    </div>
     </div>
 
 <script>
     const myLibrary = []; //initiate library
 
-    //gather elements
-    const container = document.getElementById("cards-container");
-    const getTitle = document.getElementById("ftitle");
-    const getAuthor = document.getElementById("fauthor");
-    const getPages = document.getElementById("fpages");
-    const getStatus = document.getElementById("fstatus");
-    const submitButton = document.getElementById("submit-button");
-    const errorBox = document.getElementById("error-box");
-    const cardContainer = document.getElementById("cards-container");
+    //GATHER ELEMENTS
+    const getTitle = document.getElementById("ftitle"); //form title
+    const getAuthor = document.getElementById("fauthor"); //form author
+    const getPages = document.getElementById("fpages"); //form pages
+    const getStatus = document.getElementById("fstatus"); //form status
+    const submitButton = document.getElementById("submit-button"); //submit button
+    const errorBox = document.getElementById("error-box"); //error box
+    const cardContainer = document.getElementById("cards-container"); //cards container for adding array items into
 
-    //Book constructor
+    //BOOK CONSTRUCTOR
     class Book{
         constructor(title, author, pages, status){
             this.title = title;
@@ -109,159 +117,127 @@
         }
     }
 
-    //add book, using constructor, and push to library
+    //CREATE NEW BOOK OBJECT
     function addBook(title, author, pages, status) {
         const newBook = new Book(title, author, pages, status);
         myLibrary.unshift(newBook);
     }
 
-    //keeps the page from displaying nothing
-    function noEmpty() {
-        if (cardContainer.innerHTML.trim() === "") {
+    cardContainer.addEventListener("click",function(event){
+        const eventClicked = event.target.classList;
+
+        if (eventClicked[0] == 'status-btn'){
+            const statusIdToUpdate = eventClicked[1];
+            const arrayOfElements = document.getElementsByClassName(statusIdToUpdate); //array of elements with that id
+            const statusToUpdate = arrayOfElements[4];
+
+            myLibrary.map((x) => { //cycle through read status options
+                if (x.id === statusIdToUpdate){
+                    if (x.status === "Not Read"){ 
+                        x.status = "In Progress";
+                        statusToUpdate.innerHTML = x.status;
+                        return;
+                    } else if (x.status === "In Progress"){
+                        x.status = "Read";
+                        statusToUpdate.innerHTML = x.status;
+                        return;
+                    } else if (x.status === "Read"){
+                        x.status = "Not Read";
+                        statusToUpdate.innerHTML = x.status;
+                        return;
+                    }
+                }
+                return;
+            });
+        }
+
+        if (eventClicked[0] == "remove-btn"){
+            console.log("remove button clicked");
+
+            const statusIdToRemove = eventClicked[1];
+            const cardToRemove = document.getElementsByClassName(statusIdToRemove);
+        
+            const indexToRemove = myLibrary.findIndex((x) => x.id === statusIdToRemove); //find id in library array
+            myLibrary.splice(indexToRemove, 1); //remove object from array
+
+            while (cardToRemove.length > 0) {
+                cardToRemove[0].parentNode.removeChild(cardToRemove[0]); //remove each element with id from DOM
+            }
+        }
+
+        if (myLibrary.length === 0) {
+            showExample();
+        }
+
+    });
+
+    function removeExample(){
+        const examples = document.querySelectorAll(".example");
+
+        for (i = 0; i < examples.length; i++) {
+            const hideMe = examples[i];
+            hideMe.style.display = "none";
+        }
+    }
+
+    function showExample(){
+        const examples = document.querySelectorAll(".example");
+
+        for (i = 0; i < examples.length; i++) {
+            const hideMe = examples[i];
+            hideMe.style.display = "";
+        }
+    }
+
+    //SUBMIT A NEW BOOK
+    submitButton.addEventListener("click", () => {
+
+        removeExample();
+
+        //gather the input values
+        let inputTitle = getTitle.value;
+        let inputAuthor = getAuthor.value;
+        let inputPages = getPages.value;
+        let inputStatus = getStatus.value;
+
+        function errorCheck() { //if any are blank display an error message in the error box
+            errorBox.innerHTML = "";
+            if (inputTitle === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");}
+            if (inputAuthor === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");}
+            if (inputPages === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");}
+        }
+
+        errorBox.innerHTML = "";
+        errorCheck();
+
+        if (errorBox.innerHTML === "") { //if nothing in error box, load cards and reset inputs
+            addBook(inputTitle, inputAuthor, inputPages, inputStatus);
+            getTitle.value = "";
+            getAuthor.value = "";
+            getPages.value = "";
+            getStatus.value = "Not Read";
+            addRecent();
+        }
+    });
+
+    function addRecent(){
+        myLibrary.forEach((book, index) => {
+            if (index === 0) {
             cardContainer.insertAdjacentHTML(
-                "beforeend",
-                `<div class="book-card example-remove example">
-                <h3 class="example example-remove">Add a book!</h3>
-                <p class="example example-remove">Author</p>
-                <p class="example example-remove">Pages</p>
-                <p class="example example-remove">Read Status</p>
-                <button class="example example-remove status-btn">Change Status</button>
-                <button class="example example-remove remove-btn">Remove</button>
+                "afterbegin",
+                `<div class="book-card ${book.id}">
+                <h3 class="${book.id}">${book.title}</h3>
+                <p class="${book.id}">${book.author}</p>
+                <p class="${book.id}">${book.pages}</p>
+                <p class="${book.id}">${book.status}</p>
+                <button class="status-btn ${book.id}">Change Status</button>
+                <button class="remove-btn ${book.id}">Remove</button>
                 </div>`
             );
-        }
-    }
-
-    noEmpty(); //make sure the page loads with something
-
-    //update remove buttons to operate
-    function removeBook() {
-    //gather all the remove buttons
-    let rmBtns = document.querySelectorAll(".remove-btn");
-
-    //for each button in the array of remove buttons
-    for (btn of rmBtns) {
-        btn.addEventListener("click", function () {
-        //pull class list which is [remove-btn, unique id]
-        const rmBtnArray = Array.from(this.classList);
-        //isolate id
-        const idToRemove = rmBtnArray[1];
-        //gather all elements with id in class name
-        const cardToRemove = document.getElementsByClassName(rmBtnArray[1]);
-        //find index of id to remove in myLibrary
-        const indexToRemove = myLibrary.findIndex((x) => x.id === idToRemove);
-
-        //remove it from myLibrary
-        myLibrary.splice(indexToRemove, 1);
-
-        //remove elements with id in class list
-        while (cardToRemove.length > 0) {
-            cardToRemove[0].parentNode.removeChild(cardToRemove[0]);
-        }
-
-        //incase every book is removed
-        noEmpty();
-        });
-    }
-    }
-
-    //change read status
-    function changeStatus() {
-    //gather all the status buttons
-    let statBtns = document.querySelectorAll(".status-btn");
-
-    //for each button in the array of status buttons
-    for (btn of statBtns) {
-        btn.addEventListener("click", function () {
-        //pull class lists which is [status-btn, unique id]
-        const statBtnArray = Array.from(this.classList);
-        //isolates unique id
-        const idToChange = statBtnArray[1];
-        const arrayOfElements = document.getElementsByClassName(idToChange);
-        const statusToUpdate = arrayOfElements[4];
-
-        //update the myLibrary array with new read status
-        const updateArray = myLibrary.map((x) => {
-            //find which array object to update based on id
-            if (x.id === idToChange) {
-            //loop [not read -> in progress -> read] then replace all the cards
-                if (x.status === "Not Read") {
-                    x.status = "In Progress";
-                    statusToUpdate.innerHTML = x.status;
-                } else if (x.status === "In Progress") {
-                    x.status = "Read";
-                    statusToUpdate.innerHTML = x.status;
-                } else if (x.status === "Read") {
-                    x.status = "Not Read";
-                    statusToUpdate.innerHTML = x.status;
-                }
             }
         });
-        });
-    }
     }
 
-    //load cards to page
-    function addCards() {
-    //set card container to empty so repeat submissions don't duplicate library
-    cardContainer.innerHTML = "";
-
-    //add card for each book in library array with unique id in class list of each element
-    myLibrary.forEach((book) => {
-        container.insertAdjacentHTML(
-            "beforeend",
-            `<div class="book-card ${book.id}">
-            <h3 class="${book.id}">${book.title}</h3>
-            <p class="${book.id}">${book.author}</p>
-            <p class="${book.id}">${book.pages}</p>
-            <p class="${book.id}">${book.status}</p>
-            <button class="status-btn ${book.id}">Change Status</button>
-            <button class="remove-btn ${book.id}">Remove</button>
-            </div>`
-        );
-    });
-
-    removeBook(); //adds click listeners to each button
-    changeStatus(); //adds click listeners to each button
-    }
-
-    //what to do when the submit button is hit
-    submitButton.addEventListener("click", () => {
-    let inputTitle = getTitle.value;
-    let inputAuthor = getAuthor.value;
-    let inputPages = getPages.value;
-    let inputStatus = getStatus.value;
-
-    //empty error box if something was in it. that way on repeat it's clear
-    errorBox.innerHTML = "";
-
-    //check if anything is blank and put error if so
-    function errorCheck() {
-        errorBox.innerHTML = "";
-        if (inputTitle === "") {
-        errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");
-        }
-        if (inputAuthor === "") {
-        errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");
-        }
-        if (inputPages === "") {
-        errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");
-        }
-    }
-
-    //run the error check on each click
-    errorCheck();
-
-    //if nothing in the error box, run the add book function with contents, reset inputs to blank, load cards to page
-    if (errorBox.innerHTML === "") {
-        addBook(inputTitle, inputAuthor, inputPages, inputStatus);
-        getTitle.value = "";
-        getAuthor.value = "";
-        getPages.value = "";
-        getStatus.value = "Not Read";
-        addCards();
-    }
-    });
 </script>
 </body>
 </html>
