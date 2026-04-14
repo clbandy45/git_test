@@ -83,13 +83,13 @@
     </div>
     <div class="body">
     <div id="cards-container">
-        <div class="book-card example-remove example" style="display: show">
-            <h3 class="example example-remove" style="display: show">Add a book!</h3>
-            <p class="example example-remove" style="display: show">Author</p>
-            <p class="example example-remove" style="display: show">Pages</p>
-            <p class="example example-remove" style="display: show">Read Status</p>
-            <button class="example example-remove status-btn" style="display: show">Change Status</button>
-            <button class="example example-remove remove-btn" style="display: show">Remove</button>
+        <div class="book-card example-remove example" style="display:">
+            <h3 class="example example-remove" style="display:">Add a book!</h3>
+            <p class="example example-remove" style="display:">Author</p>
+            <p class="example example-remove" style="display:">Pages</p>
+            <p class="example example-remove" style="display:">Read Status</p>
+            <button class="example example-remove status-btn" style="display:">Change Status</button>
+            <button class="example example-remove remove-btn" style="display:">Remove</button>
         </div>
     </div>
     </div>
@@ -117,16 +117,89 @@
         }
     }
 
-    //CREATE NEW BOOK OBJECT
-    function addBook(title, author, pages, status) {
-        const newBook = new Book(title, author, pages, status);
-        myLibrary.unshift(newBook);
+    //METHODS
+    const methods = {
+
+        addBook: function(title, author, pages, status) {
+            const newBook = new Book(title, author, pages, status);
+            myLibrary.unshift(newBook);
+        },
+
+        showExample: function(){
+            const examples = document.querySelectorAll(".example");
+
+            for (i = 0; i < examples.length; i++) {
+                const hideMe = examples[i];
+                hideMe.style.display = "";
+            }
+        },
+
+        removeExample: function(){
+            const examples = document.querySelectorAll(".example");
+
+            for (i = 0; i < examples.length; i++) {
+                const hideMe = examples[i];
+                hideMe.style.display = "none";
+            }
+        },
+
+        addRecent: function(){
+            myLibrary.forEach((book, index) => {
+                if (index === 0) {
+                    cardContainer.insertAdjacentHTML(
+                        "afterbegin",
+                        `<div class="book-card ${book.id}">
+                        <h3 class="${book.id}">${book.title}</h3>
+                        <p class="${book.id}">${book.author}</p>
+                        <p class="${book.id}">${book.pages}</p>
+                        <p class="${book.id}">${book.status}</p>
+                        <button class="status-btn ${book.id}">Change Status</button>
+                        <button class="remove-btn ${book.id}">Remove</button>
+                        </div>`
+                    );
+                }
+            });
+        }
     }
 
-    cardContainer.addEventListener("click",function(event){
+    //WHEN SUBMIT A NEW BOOK
+    submitButton.addEventListener("click", () => {
+
+        //gather the input values
+        let inputTitle = getTitle.value;
+        let inputAuthor = getAuthor.value;
+        let inputPages = getPages.value;
+        let inputStatus = getStatus.value;
+
+        errorBox.innerHTML = "";
+
+        function errorCheck() { //if any are blank display an error message in the error box
+            errorBox.innerHTML = "";
+            if (inputTitle === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");}
+            if (inputAuthor === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");}
+            if (inputPages === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");}
+        }
+
+        errorCheck();
+
+        if (errorBox.innerHTML === "") { //if nothing in error box, load cards and reset inputs
+            methods.removeExample();
+            methods.addBook(inputTitle, inputAuthor, inputPages, inputStatus);
+            getTitle.value = "";
+            getAuthor.value = "";
+            getPages.value = "";
+            getStatus.value = "Not Read";
+            methods.addRecent();
+        }
+    });
+
+
+
+    //EVENT LISTENER
+    cardContainer.addEventListener("click", function(event){
         const eventClicked = event.target.classList;
 
-        if (eventClicked[0] == 'status-btn'){
+        if (eventClicked[0] === 'status-btn'){
             const statusIdToUpdate = eventClicked[1];
             const arrayOfElements = document.getElementsByClassName(statusIdToUpdate); //array of elements with that id
             const statusToUpdate = arrayOfElements[4];
@@ -151,13 +224,11 @@
             });
         }
 
-        if (eventClicked[0] == "remove-btn"){
-            console.log("remove button clicked");
-
+        if (eventClicked[0] === 'remove-btn'){
             const statusIdToRemove = eventClicked[1];
             const cardToRemove = document.getElementsByClassName(statusIdToRemove);
-        
-            const indexToRemove = myLibrary.findIndex((x) => x.id === statusIdToRemove); //find id in library array
+            const indexToRemove = myLibrary.findIndex(x => x.id === statusIdToRemove); //find id in library array
+
             myLibrary.splice(indexToRemove, 1); //remove object from array
 
             while (cardToRemove.length > 0) {
@@ -166,77 +237,11 @@
         }
 
         if (myLibrary.length === 0) {
-            showExample();
-        }
-
-    });
-
-    function removeExample(){
-        const examples = document.querySelectorAll(".example");
-
-        for (i = 0; i < examples.length; i++) {
-            const hideMe = examples[i];
-            hideMe.style.display = "none";
-        }
-    }
-
-    function showExample(){
-        const examples = document.querySelectorAll(".example");
-
-        for (i = 0; i < examples.length; i++) {
-            const hideMe = examples[i];
-            hideMe.style.display = "";
-        }
-    }
-
-    //SUBMIT A NEW BOOK
-    submitButton.addEventListener("click", () => {
-
-        removeExample();
-
-        //gather the input values
-        let inputTitle = getTitle.value;
-        let inputAuthor = getAuthor.value;
-        let inputPages = getPages.value;
-        let inputStatus = getStatus.value;
-
-        function errorCheck() { //if any are blank display an error message in the error box
-            errorBox.innerHTML = "";
-            if (inputTitle === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");}
-            if (inputAuthor === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");}
-            if (inputPages === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");}
-        }
-
-        errorBox.innerHTML = "";
-        errorCheck();
-
-        if (errorBox.innerHTML === "") { //if nothing in error box, load cards and reset inputs
-            addBook(inputTitle, inputAuthor, inputPages, inputStatus);
-            getTitle.value = "";
-            getAuthor.value = "";
-            getPages.value = "";
-            getStatus.value = "Not Read";
-            addRecent();
+            methods.showExample();
         }
     });
 
-    function addRecent(){
-        myLibrary.forEach((book, index) => {
-            if (index === 0) {
-            cardContainer.insertAdjacentHTML(
-                "afterbegin",
-                `<div class="book-card ${book.id}">
-                <h3 class="${book.id}">${book.title}</h3>
-                <p class="${book.id}">${book.author}</p>
-                <p class="${book.id}">${book.pages}</p>
-                <p class="${book.id}">${book.status}</p>
-                <button class="status-btn ${book.id}">Change Status</button>
-                <button class="remove-btn ${book.id}">Remove</button>
-                </div>`
-            );
-            }
-        });
-    }
+
 
 </script>
 </body>
