@@ -6,36 +6,36 @@
     <title>My Library</title>
     <style>
         #cards-container {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        border: 2px solid limegreen;
-        
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid limegreen;
         }
 
         .body {
-        display: flex;
+            display: flex;
         }
 
         .book-card {
-        border: 2px solid black;
-        width: 16rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        padding-bottom: 0.25rem;
-        margin: 1px;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 16rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-bottom: 0.25rem;
+            margin: 1px;
         }
 
         .form-div {
-        margin-left: 1rem;
+            margin-left: 1rem;
         }
 
         fieldset {
-        display: flex;
+            display: flex;
         }
 
         input {
-        padding-left: 0.25rem;
+            padding-left: 0.25rem;
         }
 
         a {
@@ -193,8 +193,6 @@
         }
     });
 
-
-
     //EVENT LISTENER
     cardContainer.addEventListener("click", function(event){
         const eventClicked = event.target.classList;
@@ -204,23 +202,20 @@
             const arrayOfElements = document.getElementsByClassName(statusIdToUpdate); //array of elements with that id
             const statusToUpdate = arrayOfElements[4];
 
-            myLibrary.map((x) => { //cycle through read status options
+            //cycle through read status options
+            myLibrary.find((x) => { 
                 if (x.id === statusIdToUpdate){
                     if (x.status === "Not Read"){ 
                         x.status = "In Progress";
                         statusToUpdate.innerHTML = x.status;
-                        return;
                     } else if (x.status === "In Progress"){
                         x.status = "Read";
                         statusToUpdate.innerHTML = x.status;
-                        return;
                     } else if (x.status === "Read"){
                         x.status = "Not Read";
                         statusToUpdate.innerHTML = x.status;
-                        return;
                     }
                 }
-                return;
             });
         }
 
@@ -241,6 +236,16 @@
         }
     });
 
+    // methods.removeExample();
+    // methods.addBook("The Hobbit","JRR Tolkien", "297","Read");
+    // methods.addRecent();
+    // methods.addBook("The Lord of the Rings: The Fellowship of the Ring","JRR Tolkien", "500","Read");
+    // methods.addRecent();
+    // methods.addBook("The Lord of the Rings: The Two Towers","JRR Tolkien", "500","Read");
+    // methods.addRecent();
+    // methods.addBook("The Lord of the Rings: The Return of the King","JRR Tolkien", "297","Read");
+    // methods.addRecent();
+    // console.log(myLibrary);
 
 
 </script>
