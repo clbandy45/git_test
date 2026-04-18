@@ -10,6 +10,8 @@
             display: flex;
             flex-wrap: wrap;
             border: 2px solid limegreen;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
         }
 
         .body {
@@ -23,7 +25,7 @@
             padding-left: 0.5rem;
             padding-right: 0.5rem;
             padding-bottom: 0.25rem;
-            margin: 1px;
+            margin: 2px;
         }
 
         .form-div {
@@ -159,6 +161,13 @@
                     );
                 }
             });
+        },
+
+        errorCheck: function(inputTitle, inputAuthor, inputPages) { //if any are blank display an error message in the error box
+            errorBox.innerHTML = "";
+            if (inputTitle === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");}
+            if (inputAuthor === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");}
+            if (inputPages === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");}
         }
     }
 
@@ -171,16 +180,7 @@
         let inputPages = getPages.value;
         let inputStatus = getStatus.value;
 
-        errorBox.innerHTML = "";
-
-        function errorCheck() { //if any are blank display an error message in the error box
-            errorBox.innerHTML = "";
-            if (inputTitle === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input a Title!</li>");}
-            if (inputAuthor === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input an Author!</li>");}
-            if (inputPages === "") {errorBox.insertAdjacentHTML("beforeend", "<li>Input the pages!</li>");}
-        }
-
-        errorCheck();
+        methods.errorCheck(inputTitle,inputAuthor,inputPages);
 
         if (errorBox.innerHTML === "") { //if nothing in error box, load cards and reset inputs
             methods.removeExample();
@@ -236,16 +236,20 @@
         }
     });
 
-    // methods.removeExample();
-    // methods.addBook("The Hobbit","JRR Tolkien", "297","Read");
-    // methods.addRecent();
-    // methods.addBook("The Lord of the Rings: The Fellowship of the Ring","JRR Tolkien", "500","Read");
-    // methods.addRecent();
-    // methods.addBook("The Lord of the Rings: The Two Towers","JRR Tolkien", "500","Read");
-    // methods.addRecent();
-    // methods.addBook("The Lord of the Rings: The Return of the King","JRR Tolkien", "297","Read");
-    // methods.addRecent();
-    // console.log(myLibrary);
+    methods.removeExample();
+    methods.addBook("The Hobbit","JRR Tolkien", "297","Read");
+    methods.addRecent();
+    methods.addBook("The Lord of the Rings: The Fellowship of the Ring","JRR Tolkien", "500","Read");
+    methods.addRecent();
+    methods.addBook("The Lord of the Rings: The Two Towers","JRR Tolkien", "500","Read");
+    methods.addRecent();
+    methods.addBook("The Lord of the Rings: The Return of the King","JRR Tolkien", "297","Read");
+    methods.addRecent();
+    methods.addBook("Project Hail Mary","Andy Weir","400","Read");
+    methods.addRecent();
+    methods.addBook("Quantum Physics for Dummies","Einstein","1000","Not Started");
+    methods.addRecent();
+    console.log(myLibrary);
 
 
 </script>
